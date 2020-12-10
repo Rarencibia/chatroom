@@ -1,4 +1,4 @@
-var ws_uri = "ws://[http://127.0.0.1]:5500";
+var ws_uri = "ws://[https://quizzical-banach-8deba5.netlify.app/]:5500";
 var websocket = new WebSocket(ws_uri);
 
 document.getElementById("chat-form").addEventListener("submit", (event) => {
