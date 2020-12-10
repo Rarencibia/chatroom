@@ -1,4 +1,4 @@
-var websocket = new WebSocket("wss://https://quizzical-banach-8deba5.netlify.app/");
+var websocket = new WebSocket("wss://quizzical-banach-8deba5.netlify.app/");
 
 
 
