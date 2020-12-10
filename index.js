@@ -1,22 +1,7 @@
 var ws_uri = "ws://[https://quizzical-banach-8deba5.netlify.app/]:5500";
 var websocket = new WebSocket(ws_uri);
 
-document.getElementById("chat-form").addEventListener("submit", (event) => {
-	event.preventDefault();
 
-    var message_element = document.getElementsByTagName("input")[0];
-    var message = message_element.value;
-
-    if(message.toString().length) {
-        var data = {
-            type: "message",
-            username: "You",
-            message: message
-        };
-        websocket.send(JSON.stringify(data));
-        message_element.value = "";
-    }
-}, false);
 
 
 //on websocket open: 
@@ -42,6 +27,24 @@ websocket.onmessage = (event) => {
         messageAdd('<div class="message">' + data.username + ': ' + data.message + '</div>');
     }
 };
+
+document.getElementById("chat-form").addEventListener("submit", (event) => {
+	event.preventDefault();
+
+    var message_element = document.getElementsByTagName("input")[0];
+    var message = message_element.value;
+
+    if(message.toString().length) {
+        var data = {
+            type: "message",
+            username: "You",
+            message: message
+        };
+        websocket.send(JSON.stringify(data));
+        message_element.value = "";
+    }
+}, false);
+
 
 function MessageAdd(message) {
 	var chat_messages = document.getElementById("chat-messages");
