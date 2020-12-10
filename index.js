@@ -11,7 +11,7 @@ websocket.onopen = (event) => {
 
 //on websocket closes
 websocket.onclose = (event) => {
-    MessageAdd('<div class="message blue">You have been disconnected.</div>');
+    messageAdd('<div class="message blue">You have been disconnected.</div>');
 };
 
 //When there is an error
@@ -45,7 +45,7 @@ document.getElementById("chat-form").addEventListener("submit", (event) => {
 }, false);
 
 
-function MessageAdd(message) {
+function messageAdd(message) {
 	var chat_messages = document.getElementById("chat-messages");
 
 	chat_messages.insertAdjacentHTML("beforeend", message);
