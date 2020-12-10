@@ -1,4 +1,5 @@
-var websocket = new WebSocket("wss://quizzical-banach-8deba5.netlify.app/");
+var ws_uri = "ws://127.0.0.1:3000";
+var websocket = new WebSocket(ws_uri);
 
 
 
